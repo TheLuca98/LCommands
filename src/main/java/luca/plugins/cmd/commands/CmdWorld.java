@@ -21,21 +21,24 @@ package luca.plugins.cmd.commands;
 import luca.plugins.cmd.CommandArgs;
 import luca.plugins.cmd.CustomPlayerCommand;
 import luca.plugins.cmd.LCommands;
-import org.bukkit.Location;
+import org.bukkit.Bukkit;
+import org.bukkit.World;
 import org.bukkit.entity.Player;
 
-public class CmdSurface extends CustomPlayerCommand {
+public class CmdWorld extends CustomPlayerCommand {
 
-    public CmdSurface() {
-        super("surface", "lcommands.surface", "top");
-        setDescription("Teleports to the surface.");
+    public CmdWorld() {
+        super("world", "lcommands.world");
+        setDescription("Allows to switch between worlds.");
     }
 
     @Override
     public void execute(Player player, CommandArgs args) {
-        Location loc = player.getWorld().getHighestBlockAt(player.getLocation()).getLocation().add(0.5, 1, 0.5);
-        player.teleport(loc);
-        player.sendMessage(LCommands.getMP().getMessage("commands.surface.tp"));
+        World world = Bukkit.getWorld(args.get(0));
+        if (world != null) {
+            player.teleport(world.getSpawnLocation());
+            player.sendMessage(LCommands.getMP().formatMessage("commands.world.tp", world.getName()));
+        }
     }
 
 }
