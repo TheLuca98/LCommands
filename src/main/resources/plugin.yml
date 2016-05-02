@@ -1,0 +1,5 @@
+name: ${project.artifactId}
+version: ${project.version}
+main: luca.plugins.cmd.LCommands
+author: TheLuca98
+website: https://github.com/TheLuca98/LCommands
