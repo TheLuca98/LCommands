@@ -29,7 +29,7 @@ import java.util.Arrays;
 
 public class CommandArgs extends ArrayList<String> {
 
-    public CommandArgs(String[] args) {
+    public CommandArgs(String... args) {
         super(Arrays.asList(args));
     }
 

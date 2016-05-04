@@ -20,23 +20,22 @@ package luca.plugins.cmd.commands;
 
 import luca.plugins.cmd.CommandArgs;
 import luca.plugins.cmd.CustomCommand;
-import org.bukkit.GameMode;
 import org.bukkit.command.CommandSender;
 
-public class CmdGMA extends CustomCommand {
+public class CmdDay extends CustomCommand {
 
-    public CmdGMA() {
-        super("gma", CmdGameMode.INSTANCE.getPermission(), "adventure");
-        setDescription(CmdGameMode.INSTANCE.getDescription());
-        setUsage("[target]");
+    public CmdDay() {
+        super("day", CmdTime.INSTANCE.getPermission());
+        setDescription(CmdTime.INSTANCE.getDescription());
+        setUsage("[world]");
     }
 
     @Override
     public void execute(CommandSender sender, CommandArgs args) {
         if (args.length() > 0) {
-            CmdGameMode.INSTANCE.execute(sender, new CommandArgs(GameMode.ADVENTURE.name(), args.get(0)));
+            CmdTime.INSTANCE.execute(sender, new CommandArgs("day", args.get(0)));
         } else {
-            CmdGameMode.INSTANCE.execute(sender, new CommandArgs(GameMode.ADVENTURE.name()));
+            CmdTime.INSTANCE.execute(sender, new CommandArgs("day"));
         }
     }
 

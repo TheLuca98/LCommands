@@ -26,7 +26,7 @@ import org.bukkit.command.CommandSender;
 public class CmdGMS extends CustomCommand {
 
     public CmdGMS() {
-        super("gms", "lcommands.gamemode", "survival");
+        super("gms", CmdGameMode.INSTANCE.getPermission(), "survival");
         setDescription(CmdGameMode.INSTANCE.getDescription());
         setUsage("[target]");
     }
@@ -34,9 +34,9 @@ public class CmdGMS extends CustomCommand {
     @Override
     public void execute(CommandSender sender, CommandArgs args) {
         if (args.length() > 0) {
-            CmdGameMode.INSTANCE.execute(sender, new CommandArgs(new String[] {GameMode.SURVIVAL.name(), args.get(0)}));
+            CmdGameMode.INSTANCE.execute(sender, new CommandArgs(GameMode.SURVIVAL.name(), args.get(0)));
         } else {
-            CmdGameMode.INSTANCE.execute(sender, new CommandArgs(new String[] {GameMode.SURVIVAL.name()}));
+            CmdGameMode.INSTANCE.execute(sender, new CommandArgs(GameMode.SURVIVAL.name()));
         }
     }
 

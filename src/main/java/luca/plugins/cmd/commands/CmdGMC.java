@@ -26,7 +26,7 @@ import org.bukkit.command.CommandSender;
 public class CmdGMC extends CustomCommand {
 
     public CmdGMC() {
-        super("gmc", "lcommands.gamemode", "creative");
+        super("gmc", CmdGameMode.INSTANCE.getPermission(), "creative");
         setDescription(CmdGameMode.INSTANCE.getDescription());
         setUsage("[target]");
     }
@@ -34,9 +34,9 @@ public class CmdGMC extends CustomCommand {
     @Override
     public void execute(CommandSender sender, CommandArgs args) {
         if (args.length() > 0) {
-            CmdGameMode.INSTANCE.execute(sender, new CommandArgs(new String[] {GameMode.CREATIVE.name(), args.get(0)}));
+            CmdGameMode.INSTANCE.execute(sender, new CommandArgs(GameMode.CREATIVE.name(), args.get(0)));
         } else {
-            CmdGameMode.INSTANCE.execute(sender, new CommandArgs(new String[] {GameMode.CREATIVE.name()}));
+            CmdGameMode.INSTANCE.execute(sender, new CommandArgs(GameMode.CREATIVE.name()));
         }
     }
 

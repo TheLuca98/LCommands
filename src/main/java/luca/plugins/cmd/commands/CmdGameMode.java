@@ -32,28 +32,28 @@ import java.util.Map;
 
 public class CmdGameMode extends CustomCommand {
 
-    public static final CmdGameMode INSTANCE = new CmdGameMode();
+    static final CmdGameMode INSTANCE = new CmdGameMode();
 
-    private final Map<String, GameMode> modes;
+    private final Map<String, GameMode> map;
 
     @SuppressWarnings("deprecated")
     public CmdGameMode() {
         super("gamemode", "lcommands.gamemode", "gm");
         setDescription("Changes a player's game mode.");
         setUsage("<value> [target]");
-        this.modes = new HashMap<>();
+        this.map = new HashMap<>();
         for (GameMode mode : GameMode.values()) {
-            modes.put(mode.name().toLowerCase(), mode);
-            modes.put(String.valueOf(mode.getValue()), mode);
+            map.put(mode.name().toLowerCase(), mode);
+            map.put(String.valueOf(mode.getValue()), mode);
         }
-        modes.put("c", GameMode.CREATIVE);
-        modes.put("s", GameMode.SURVIVAL);
-        modes.put("a", GameMode.ADVENTURE);
+        map.put("c", GameMode.CREATIVE);
+        map.put("s", GameMode.SURVIVAL);
+        map.put("a", GameMode.ADVENTURE);
     }
 
     @Override
     public void execute(CommandSender sender, CommandArgs args) {
-        GameMode mode = modes.get(args.get(0).toLowerCase());
+        GameMode mode = map.get(args.get(0).toLowerCase());
         if (mode == null) {
             throw new CommandException(LCommands.getMP().getMessage("commands.gamemode.invalid"));
         }
