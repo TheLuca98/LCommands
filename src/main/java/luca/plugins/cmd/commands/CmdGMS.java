@@ -27,6 +27,8 @@ public class CmdGMS extends CustomCommand {
 
     public CmdGMS() {
         super("gms", "lcommands.gamemode", "survival");
+        setDescription(CmdGameMode.INSTANCE.getDescription());
+        setUsage("[target]");
     }
 
     @Override

@@ -27,6 +27,8 @@ public class CmdGMA extends CustomCommand {
 
     public CmdGMA() {
         super("gma", "lcommands.gamemode", "adventure");
+        setDescription(CmdGameMode.INSTANCE.getDescription());
+        setUsage("[target]");
     }
 
     @Override

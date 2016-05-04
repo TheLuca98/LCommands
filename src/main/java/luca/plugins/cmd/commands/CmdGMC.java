@@ -27,6 +27,8 @@ public class CmdGMC extends CustomCommand {
 
     public CmdGMC() {
         super("gmc", "lcommands.gamemode", "creative");
+        setDescription(CmdGameMode.INSTANCE.getDescription());
+        setUsage("[target]");
     }
 
     @Override

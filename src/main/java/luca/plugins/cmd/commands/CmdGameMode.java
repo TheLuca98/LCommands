@@ -39,6 +39,8 @@ public class CmdGameMode extends CustomCommand {
     @SuppressWarnings("deprecated")
     public CmdGameMode() {
         super("gamemode", "lcommands.gamemode", "gm");
+        setDescription("Changes a player's game mode.");
+        setUsage("<value> [target]");
         this.modes = new HashMap<>();
         for (GameMode mode : GameMode.values()) {
             modes.put(mode.name().toLowerCase(), mode);
