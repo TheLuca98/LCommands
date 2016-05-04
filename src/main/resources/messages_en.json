@@ -5,6 +5,8 @@
   "commands.feed.done": "&aYou satiated the appetite of %s.",
   "commands.fly.disable": "&aFlight disabled for %s.",
   "commands.fly.enable": "&aFlight enabled for %s.",
+  "commands.gamemode.done": "&aSet game mode to %s for %s.",
+  "commands.gamemode.invalid": "The game mode you provided is not valid.",
   "commands.heal.done": "&a%s has been healed.",
   "commands.ping.latency": "&aYour latency is %d milliseconds.",
   "commands.ping.pong": "&aPong!",
