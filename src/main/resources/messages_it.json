@@ -1,12 +1,12 @@
 {
   "commands.clear.done": "&aPulito l'inventario di %s.",
   "commands.clear.nomaterial": "Per favore specifica un oggetto valido.",
-  "commands.crash.done": "&aIl client di %s è stato crashato.",
+  "commands.crash.done": "&aIl client di %s \u00e8 stato crashato.",
   "commands.feed.done": "&aHai saziato l'appetito di %s.",
-  "commands.fly.disable": "&aModalità volo disattivata per %s.",
-  "commands.fly.enable": "&aModalità volo attivata per %s.",
-  "commands.heal.done": "&a%s è stato guarito.",
-  "commands.ping.latency": "&aLa tua latenza attuale è di %d millisecondi.",
+  "commands.fly.disable": "&aModalit\u00e0 volo disattivata per %s.",
+  "commands.fly.enable": "&aModalit\u00e0 volo attivata per %s.",
+  "commands.heal.done": "&a%s \u00e8 stato guarito.",
+  "commands.ping.latency": "&aLa tua latenza attuale \u00e8 di %d millisecondi.",
   "commands.ping.pong": "&aPong!",
   "commands.rename.noitem": "Non hai alcun oggetto in mano.",
   "commands.say.format": "&8[&7Avviso&8] &f%s",
@@ -17,8 +17,8 @@
   "error.args.integer": "Parametro non valido: deve essere un numero intero",
   "error.args.number": "Parametro non valido: deve essere un numero",
   "error.args.player": "Parametro non valido: deve essere un giocatore online",
-  "error.command.internal": "È stato riscontrato un errore.",
+  "error.command.internal": "\u00c8 stato riscontrato un errore.",
   "error.command.permission": "Non sei autorizzato ad usare questo comando.",
-  "error.command.player": "Questo comando può essere utilizzato solo come giocatore.",
+  "error.command.player": "Questo comando pu\u00f2 essere utilizzato solo come giocatore.",
   "error.command.usage": "Sintassi: %s"
 }
