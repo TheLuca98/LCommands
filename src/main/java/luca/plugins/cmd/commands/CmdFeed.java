@@ -40,7 +40,7 @@ public class CmdFeed extends CustomPlayerCommand {
         target.setFoodLevel(20);
         target.setSaturation(10);
         target.setExhaustion(0);
-        player.sendMessage(LCommands.getMP().formatMessage("commands.feed.info", player.getName()));
+        player.sendMessage(LCommands.getMP().formatMessage("commands.feed.done", player.getName()));
     }
 
 }

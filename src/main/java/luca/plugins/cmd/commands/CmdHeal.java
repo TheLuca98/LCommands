@@ -38,7 +38,7 @@ public class CmdHeal extends CustomPlayerCommand {
             target = args.getPlayer(0);
         }
         target.setHealth(target.getMaxHealth());
-        player.sendMessage(LCommands.getMP().formatMessage("commands.heal.info", target.getName()));
+        player.sendMessage(LCommands.getMP().formatMessage("commands.heal.done", target.getName()));
     }
 
 }

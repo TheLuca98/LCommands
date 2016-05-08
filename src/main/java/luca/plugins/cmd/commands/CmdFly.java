@@ -39,10 +39,10 @@ public class CmdFly extends CustomPlayerCommand {
         }
         if (target.getAllowFlight()) {
             target.setAllowFlight(false);
-            player.sendMessage(LCommands.getMP().formatMessage("commands.fly.disable", player.getName()));
+            player.sendMessage(LCommands.getMP().formatMessage("commands.fly.disable", target.getName()));
         } else {
             target.setAllowFlight(true);
-            player.sendMessage(LCommands.getMP().formatMessage("commands.fly.enable", player.getName()));
+            player.sendMessage(LCommands.getMP().formatMessage("commands.fly.enable", target.getName()));
         }
     }
 

@@ -30,6 +30,7 @@ public class CmdWorld extends CustomPlayerCommand {
     public CmdWorld() {
         super("world", "lcommands.world");
         setDescription("Allows to switch between worlds.");
+        setUsage("<world>");
     }
 
     @Override
