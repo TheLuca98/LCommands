@@ -24,7 +24,7 @@ import org.bukkit.entity.Player;
 
 public class CmdTPHere extends CustomPlayerCommand {
 
-    public CmdTPHere(String name) {
+    public CmdTPHere() {
         super("tphere", "lcommands.tphere", "bring", "b");
         setDescription("Teleports here a player.");
         setUsage("<target>");

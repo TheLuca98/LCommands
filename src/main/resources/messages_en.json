@@ -1,6 +1,5 @@
 {
   "commands.clear.done": "&aCleared the inventory of %s.",
-  "commands.clear.nomaterial": "Please specify a valid item.",
   "commands.crash.done": "&aThe client of %s has been crashed.",
   "commands.feed.done": "&aYou satiated the appetite of %s.",
   "commands.fly.disable": "&aFlight disabled for %s.",
@@ -17,8 +16,11 @@
   "error.args.boolean": "Invalid value: must be 'true' or 'false'",
   "error.args.indexinfo": "%s @ Argument %d",
   "error.args.integer": "Invalid value: must be an integer",
+  "error.args.material": "Please specify a valid item.",
   "error.args.number": "Invalid value: must be a number",
   "error.args.player": "Invalid value: must be an online player",
+  "error.args.positive": "Invalid value: must be positive",
+  "error.args.stack": "Invalid value: must be between 1 and 64",
   "error.command.internal": "An internal error occurred.",
   "error.command.permission": "You do not have permission to use this command.",
   "error.command.player": "This command can be used only as a player.",

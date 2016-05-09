@@ -19,42 +19,41 @@
 package luca.plugins.cmd.commands;
 
 import luca.plugins.cmd.CommandArgs;
-import luca.plugins.cmd.CustomCommand;
+import luca.plugins.cmd.CustomPlayerCommand;
 import luca.plugins.cmd.LCommands;
 import luca.plugins.cmd.exceptions.CommandException;
-import luca.plugins.cmd.exceptions.UsageException;
 import org.bukkit.Material;
-import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
 
-public class CmdClear extends CustomCommand {
+public class CmdItem extends CustomPlayerCommand {
 
-    public CmdClear() {
-        super("clear", "lcommands.clear", "ci");
-        setDescription("Clears an inventory.");
-        setUsage("[player] [item]");
+    public CmdItem() {
+        super("item", "lcommands.item", "i");
     }
 
     @Override
-    public void execute(CommandSender sender, CommandArgs args) {
-        Player target;
-        if (args.length() > 0) {
-            target = args.getPlayer(0);
-        } else if (sender instanceof Player) {
-            target = (Player) sender;
-        } else {
-            throw new UsageException();
+    public void execute(Player player, CommandArgs args) {
+        Material material = Material.matchMaterial(args.get(0));
+        if (material == null) {
+            throw new CommandException(LCommands.getMP().getMessage("error.args.material"));
         }
+        int amount = 1;
+        int data = 0;
         if (args.length() > 1) {
-            Material material = Material.matchMaterial(args.get(1));
-            if (material == null) {
-                throw new CommandException(LCommands.getMP().getMessage("error.args.material"));
+            amount = args.getInt(1);
+            if (amount > 64 || amount < 1) {
+                throw new CommandException(LCommands.getMP().getMessage("error.args.stack"), 1);
             }
-            target.getInventory().remove(material);
-        } else {
-            target.getInventory().clear();
-            sender.sendMessage(LCommands.getMP().formatMessage("commands.clear.done", target.getName()));
         }
+        if (args.length() > 2) {
+            data = args.getInt(2);
+            if (amount < 0) {
+                throw new CommandException(LCommands.getMP().getMessage("error.args.positive"), 2);
+            }
+        }
+        ItemStack item = new ItemStack(material, amount, (short) data);
+        player.getInventory().addItem(item);
     }
 
 }
