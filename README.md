@@ -11,3 +11,9 @@ such as Essentials. It requires zero configuration and is suitable for any kind 
 massive minigame networks.
 
 **The project is currently under heavy development. Downloads and documentation will be available later.**
+
+### Credits
+
+* **[@TheLuca98](https://github.com/TheLuca98)** Head Developer / Italian Translator
+* **[@heyimblake](https://github.com/heyimblake)** Spanish Translator
+* **[@Gleydar](https://github.com/Gleydar)** German Translator
